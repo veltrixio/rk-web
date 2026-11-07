@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.local-tools/
+*.tsbuildinfo
+.env*
+!.env.example
+next-env.d.ts
+npm-debug.log*
+.DS_Store
