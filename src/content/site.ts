@@ -32,7 +32,7 @@ export const site = {
   finalHeading: ["Váš další krok", "začíná zde."],
   finalLink: "Zobrazit nabídku nemovitostí",
   portraits: {
-    hero: { src: heroPortrait, alt: "Mgr. Kateřina Bala ve zlatých šatech sedí ve světlém křesle" },
+    hero: { src: heroPortrait, alt: "Mgr. Kateřina Bala ve zlatých šatech u tmavého mramorového pultu" },
     about: { src: aboutPortrait, alt: "Kateřina Bala v saténové halence před tmavým mramorem se zlatými detaily" },
   },
   editorial: { src: editorialDetail, alt: "Interiér s krémovou pohovkou, bílými květy a krbem v tmavém mramoru" },
