@@ -36,7 +36,7 @@ nav a:hover, .footer-links a:hover { color: var(--gold); }
 .menu-toggle { display: none; }
 .hero {
   background-color: var(--ink);
-  background-image: linear-gradient(90deg, rgb(21 20 18 / 36%), transparent 75%), url("./hero-marble.webp");
+  background-image: linear-gradient(90deg, rgb(21 20 18 / 24%), transparent 75%), url("./hero-marble.svg"), linear-gradient(128deg, #121210, #201e1a 52%, #151412);
   background-size: cover;
   background-position: center;
 }
