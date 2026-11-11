@@ -111,6 +111,15 @@ h3 { font-size: clamp(30px, 2.8vw, 45px); line-height: 1.2; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 22px; padding-block: 40px; font-size: 13px; color: #cbc4b8; }
 .footer-inner .brand { color: var(--ivory); }
 .footer-links { display: grid; gap: 5px; }
+.contact-layout h2 { margin-bottom: 0; }
+.contact-details { font-style: normal; }
+.contact-details > a { display: flex; align-items: center; gap: 12px; width: fit-content; min-height: 44px; font-size: clamp(16px, 2vw, 26px); overflow-wrap: anywhere; }
+.contact-details > a:hover { color: #78603a; }
+.contact-details svg { flex-shrink: 0; color: #78603a; }
+.contact-office { border-block: 1px solid var(--light-rule); margin-block: 24px; padding-block: 16px 24px; }
+.contact-office p { margin-top: 8px; color: #514b44; }
+.contact-social-title { font-weight: 600; }
+.contact-social { display: flex; flex-wrap: wrap; gap: 4px 22px; }
 @media (max-width: 1000px) {
   :root { --gutter: 4vw; }
   .hero-grid { column-gap: 28px; }
