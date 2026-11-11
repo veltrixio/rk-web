@@ -34,7 +34,12 @@ nav a { padding-block: 10px; }
 nav a:hover, .footer-links a:hover { color: var(--gold); }
 .nav-offer { display: flex; gap: 14px; align-items: center; border: 1px solid #8e7953; padding: 9px 17px; color: var(--gold); }
 .menu-toggle { display: none; }
-.hero { background: var(--ink); }
+.hero {
+  background-color: var(--ink);
+  background-image: linear-gradient(90deg, rgb(21 20 18 / 36%), transparent 75%), url("./hero-marble.webp");
+  background-size: cover;
+  background-position: center;
+}
 .hero-grid { display: grid; grid-template-columns: 0.96fr 1.04fr; grid-template-rows: auto auto; column-gap: clamp(32px, 5vw, 82px); padding-block: clamp(32px, 3.2vw, 54px); }
 .hero-heading { align-self: end; grid-column: 1; grid-row: 1; }
 .hero-intro { grid-column: 1; grid-row: 2; }
@@ -75,11 +80,17 @@ h2 { font-size: clamp(50px, 5.2vw, 84px); line-height: .99; letter-spacing: -.04
 h3 { font-size: clamp(30px, 2.8vw, 45px); line-height: 1.2; }
 .service-list .body { margin-bottom: 0; }
 .inline { display: inline; }
-.reviews { display: grid; grid-template-columns: repeat(2,1fr); column-gap: 7vw; margin: 38px 0 18px; }
-.reviews figure { border-top: 1px solid var(--light-rule); padding: 22px 0 30px; }
-.quote-mark { font: 52px/.8 var(--font-editorial); color: #937849; }
-blockquote { font-size: clamp(27px, 2.4vw, 38px); line-height: 1.2; }
-.reviews figcaption { margin-top: 18px; color: #62594e; font-size: 14px; }
+.reviews { margin: 38px 0 18px; }
+.reviews figure {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(0, 3fr);
+  gap: clamp(24px, 4vw, 64px);
+  padding-block: clamp(26px, 3vw, 46px);
+  border-top: 1px solid var(--light-rule);
+}
+.reviews blockquote { grid-column: 2; grid-row: 1; max-width: 62ch; font-size: clamp(22px, 1.8vw, 28px); line-height: 1.5; }
+.reviews blockquote p + p { margin-top: .8em; }
+.reviews figcaption { grid-column: 1; grid-row: 1; padding-top: .45em; color: #62594e; font-size: 14px; }
 .final { background: var(--ink); padding-block: clamp(40px, 5vw, 80px); }
 .final-layout { display: grid; align-items: center; }
 .editorial-photo, .final-copy { grid-area: 1 / 1; }
@@ -126,7 +137,8 @@ blockquote { font-size: clamp(27px, 2.4vw, 38px); line-height: 1.2; }
   .offer, .text-link { font-size: 13px; }
   .about { gap: 34px; }
   .about-photo { max-width: 440px; }
-  .reviews { grid-template-columns: 1fr; }
+  .reviews figure { display: block; }
+  .reviews figcaption { padding-top: 14px; }
   .footer-inner { display: grid; gap: 18px; }
 }
 @media (prefers-reduced-motion: no-preference) {

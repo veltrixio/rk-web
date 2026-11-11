@@ -54,5 +54,5 @@ Sdílecí obrázek je v `public/images/social-preview.webp` (1200 × 630 px). Ca
 
 ## Obsahové zdroje
 
-Čtyři klientské citace byly ověřeny na [oficiálním profilu NEXT REALITY](https://www.nextreality.cz/katerinabala). Značka `[…]` označuje vynechanou část původní recenze. Při dalších úpravách ověřte znění i autora na stejném profilu. Odkazy na nabídku vedou na [profil na Sreality](https://www.sreality.cz/adresar/next-reality-ceske-budejovice-ceske-budejovice-ceske-budejovice-6/26341/makleri/270893).
+Čtyři klientské citace byly ověřeny na [oficiálním profilu NEXT REALITY](https://www.nextreality.cz/katerinabala). Web zobrazuje celé znění všech čtyř vybraných referencí. Při dalších úpravách ověřte znění i autora na stejném profilu. Odkazy na nabídku vedou na [profil na Sreality](https://www.sreality.cz/adresar/next-reality-ceske-budejovice-ceske-budejovice-ceske-budejovice-6/26341/makleri/270893).
 
