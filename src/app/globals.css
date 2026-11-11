@@ -36,7 +36,7 @@ nav a:hover, .footer-links a:hover { color: var(--gold); }
 .menu-toggle { display: none; }
 .hero {
   background-color: var(--ink);
-  background-image: linear-gradient(90deg, rgb(21 20 18 / 24%), transparent 75%), url("./hero-marble.svg"), linear-gradient(128deg, #121210, #201e1a 52%, #151412);
+  background-image: linear-gradient(90deg, rgb(15 14 12 / 50%), rgb(15 14 12 / 16%) 70%), url("./hero-marble.webp");
   background-size: cover;
   background-position: center;
 }
@@ -115,6 +115,9 @@ h3 { font-size: clamp(30px, 2.8vw, 45px); line-height: 1.2; }
   .footer-inner { flex-wrap: wrap; }
 }
 @media (max-width: 760px) {
+  .hero {
+    background-image: linear-gradient(180deg, rgb(12 11 10 / 55%), transparent 38%, rgb(12 11 10 / 70%) 86%), url("./hero-marble.webp");
+  }
   :root { --gutter: clamp(20px, 6vw, 40px); }
   .header-inner { min-height: 70px; }
   .brand-copy { font-size: 17px; }
