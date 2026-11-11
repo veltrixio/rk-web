@@ -47,7 +47,7 @@ export const site = {
   finalLink: "Zobrazit nabídku nemovitostí",
   portraits: {
     hero: { src: heroPortrait, alt: "Mgr. Kateřina Bala ve zlatých šatech u tmavého mramorového pultu" },
-    about: { src: aboutPortrait, alt: "Kateřina Bala v saténové halence před tmavým mramorem se zlatými detaily" },
+    about: { src: aboutPortrait, alt: "Kateřina Bala sedí ve světlém křesle ve zlatých šatech a podpírá si bradu rukou" },
   },
   editorial: { src: editorialDetail, alt: "Interiér s krémovou pohovkou, bílými květy a krbem v tmavém mramoru" },
 } as const;
