@@ -21,7 +21,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline
 .wrap { width: min(calc(100% - 2 * var(--gutter)), 1350px); margin-inline: auto; }
 .skip { position: fixed; top: -120px; left: 12px; z-index: 5; padding: 12px; background: var(--ivory); color: var(--ink); }
 .skip:focus { top: 12px; }
-header { position: relative; z-index: 2; background: var(--ink); border-bottom: 1px solid var(--dark-rule); }
+header, .hero, footer {
+  background-color: var(--ink);
+  background-image: linear-gradient(90deg, rgb(15 14 12 / 60%), rgb(15 14 12 / 48%)), url("./hero-marble.webp");
+  background-size: 100% 100%, var(--marble-width, 100%) auto;
+  background-position: center, center var(--marble-offset, 0px);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+header { position: relative; z-index: 2; }
+.hero { --marble-offset: var(--marble-hero-offset); }
+footer { --marble-offset: var(--marble-footer-offset); }
 .header-inner, .brand, nav, .actions, .offer, .text-link, .eyebrow { display: flex; align-items: center; }
 .header-inner { justify-content: space-between; min-height: 84px; gap: 20px; }
 .brand { gap: 18px; width: max-content; }
@@ -34,12 +44,6 @@ nav a { padding-block: 10px; }
 nav a:hover, .footer-links a:hover { color: var(--gold); }
 .nav-offer { display: flex; gap: 14px; align-items: center; border: 1px solid #8e7953; padding: 9px 17px; color: var(--gold); }
 .menu-toggle { display: none; }
-.hero {
-  background-color: var(--ink);
-  background-image: linear-gradient(90deg, rgb(15 14 12 / 50%), rgb(15 14 12 / 16%) 70%), url("./hero-marble.webp");
-  background-size: cover;
-  background-position: center;
-}
 .hero-grid { display: grid; grid-template-columns: 0.96fr 1.04fr; grid-template-rows: auto auto; column-gap: clamp(32px, 5vw, 82px); padding-block: clamp(32px, 3.2vw, 54px); }
 .hero-heading { align-self: end; grid-column: 1; grid-row: 1; }
 .hero-intro { grid-column: 1; grid-row: 2; }
@@ -115,15 +119,16 @@ h3 { font-size: clamp(30px, 2.8vw, 45px); line-height: 1.2; }
   .footer-inner { flex-wrap: wrap; }
 }
 @media (max-width: 760px) {
-  .hero {
-    background-image: linear-gradient(180deg, rgb(12 11 10 / 55%), transparent 38%, rgb(12 11 10 / 70%) 86%), url("./hero-marble.webp");
-  }
   :root { --gutter: clamp(20px, 6vw, 40px); }
   .header-inner { min-height: 70px; }
   .brand-copy { font-size: 17px; }
   .menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; color: var(--gold); }
   nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--ink); border-block: 1px solid var(--dark-rule); padding: 16px var(--gutter) 24px; }
-  nav.open { display: grid; gap: 2px; }
+  nav.open {
+    display: grid; gap: 2px;
+    background: inherit;
+    background-position: center, center var(--marble-hero-offset, -70px);
+  }
   nav a { min-height: 44px; }
   .nav-offer { width: fit-content; margin-top: 8px; }
   .hero-grid, .about, .split { grid-template-columns: 1fr; }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { site } from "@/content/site";
 import { Brand } from "../ui/Brand";
@@ -8,6 +8,32 @@ import { Brand } from "../ui/Brand";
 export function Header() {
   const [open, setOpen] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
+  useLayoutEffect(() => {
+    const header = document.querySelector("header");
+    const hero = document.querySelector<HTMLElement>(".hero");
+    const footer = document.querySelector("footer");
+    if (!header || !hero || !footer) return;
+
+    const style = document.documentElement.style;
+    const alignMarble = () => {
+      const top = header.getBoundingClientRect();
+      const middle = hero.getBoundingClientRect();
+      const totalHeight = top.height + middle.height + footer.getBoundingClientRect().height;
+      // Scale the 1536 × 1024 slab once for all three slices.
+      style.setProperty("--marble-width", Math.max(top.width, totalHeight * 1.5) + "px");
+      style.setProperty("--marble-hero-offset", -top.height + "px");
+      style.setProperty("--marble-footer-offset", -(top.height + middle.height) + "px");
+    };
+    alignMarble();
+    const observer = new ResizeObserver(alignMarble);
+    [header, hero, footer].forEach(section => observer.observe(section));
+    return () => {
+      observer.disconnect();
+      for (const key of ["--marble-width", "--marble-hero-offset", "--marble-footer-offset"]) {
+        style.removeProperty(key);
+      }
+    };
+  }, []);
   useEffect(() => {
     if (!open) return;
     function escape(event: KeyboardEvent) {
